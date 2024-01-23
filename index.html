@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalgesprächsfragebogen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Personalgesprächsfragebogen</h1>
+
+  <form id="questionnaireForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="position">Position:</label>
+    <input type="text" id="position" name="position" required><br>
+
+    <h2>Fragen:</h2>
+
+    <label for="experience">1. Wie viele Jahre Berufserfahrung haben Sie?</label>
+    <input type="number" id="experience" name="experience" required><br>
+
+    <label for="strengths">2. Was sind Ihre Stärken?</label>
+    <textarea id="strengths" name="strengths" rows="4" required></textarea><br>
+
+    <label for="weaknesses">3. Was sind Ihre Schwächen?</label>
+    <textarea id="weaknesses" name="weaknesses" rows="4" required></textarea><br>
+
+    <label for="achievements">4. Nennen Sie ein berufliches Erfolgserlebnis.</label>
+    <textarea id="achievements" name="achievements" rows="4" required></textarea><br>
+
+    <input type="submit" value="Fragebogen absenden">
+  </form>
+
+  <script>
+    document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get form data
+      const formData = new FormData(event.target);
+
+      // Display the form data (you can modify this part)
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+    });
+  </script>
+
+</body>
+</html>
